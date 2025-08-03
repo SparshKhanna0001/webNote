@@ -39,18 +39,22 @@ function Home(){
             else alert("Failed to add");
             getNotes();
         })
-           .catch((err)=> {console.log(`addNotes ${err}`)})
+           .catch((err)=> {console.log(err)})
            
     };
 
     return (<div className="notes-section">
     <div>
-        <h2 className="notes-section-h2">Notes</h2>
-            {
-                notes.map((note)=> {<Note note={note} onDelete={deleteNotes} key={note.id} />})
+    <h2 className="notes-section-h2">Notes</h2>
+    <div className="notes-row-grid">            {
+                notes.map((note)=> <Note note={note} onDelete={deleteNotes} key={note.id} />)
             }
     </div>
+    </div>
     
+    <br />
+
+    <h2 className="form-h2">Create a Note</h2>
     <form onSubmit={createNote} className="note">
         <label htmlFor="title" className="form-label">Title: </label>
         <br/>
@@ -73,7 +77,9 @@ function Home(){
             onChange = {(e) => {setContent(e.target.value)}}
             placeholder="write something"  
             required
+            className="textarea"
         />
+        <br />
         <input type="submit" value="Add"></input>
     </form>
     </div>

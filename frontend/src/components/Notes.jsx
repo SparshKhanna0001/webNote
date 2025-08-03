@@ -1,7 +1,7 @@
 import "../styles/Note.css"
 
 function Note({note, onDelete}){
-    const formattedDate = new Date(note.time_creation).toLocalDateString("en-US");
+    const formattedDate = new Date(note.time_creation).toLocaleDateString("en-US");
 
     return (<div className="note-container">
     <p className="note-title">{note.title}</p>
