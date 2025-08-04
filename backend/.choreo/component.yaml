@@ -1,5 +1,5 @@
 componentType: Service
 name: backend
 source: 
-type: Local
-        path: ../
+    type: Local
+    path: ../
